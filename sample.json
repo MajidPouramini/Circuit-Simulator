@@ -1,0 +1,22 @@
+{
+    "elements": [
+        {
+            "id": 1,
+            "name": "bus",
+            "x": 0,
+            "y": 0
+        }
+    ],
+    "wires": [
+        {
+            "form": {
+                "id": 1,
+                "input": 1
+            },
+            "to": {
+                "id": 2,
+                "input": 2
+            }
+        }
+    ]
+}
