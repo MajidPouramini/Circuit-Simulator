@@ -17,9 +17,10 @@ if __name__ == "__main__":
     fileReader = FileReader('./sample.json')
     circuitGenerator = CircuitGenerator(fileReader.elements, fileReader.wires)
     circuit: Circuit = circuitGenerator.getCircuit();
+
     app = QtWidgets.QApplication([])
 
-    widget = HomeWidget()
+    widget = HomeWidget(circuit)
     widget.resize(800, 600)
     widget.show()
 

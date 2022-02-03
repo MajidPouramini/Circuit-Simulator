@@ -1,3 +1,4 @@
+from ast import Str
 from tokenize import Number
 from typing import List
 
@@ -7,8 +8,9 @@ import model.wire as wire
 class Element():
     terminals: List[wire.Wire] = []
 
-    def __init__(self, number_of_terminals: Number, id: Number, x: Number, y: Number):
+    def __init__(self, number_of_terminals: Number, image: Str, id: Number, x: Number, y: Number):
         self.number_of_terminals = number_of_terminals
+        self.image = image
         self.id = id
         self.x = x
         self.y = y
