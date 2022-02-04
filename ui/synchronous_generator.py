@@ -1,23 +1,24 @@
-from PySide6 import QtWidgets
+from PySide6 import QtWidgets, QtCore
+
 
 class SynchronousGeneratorDialog(QtWidgets.QDialog):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, parent=None):
+        super(SynchronousGeneratorDialog, self).__init__(parent)
+
         self.setWindowTitle('Synchronous Generator')
-        self.simulateButton = QtWidgets.QPushButton('Simulate')
-        self.optionsButton = QtWidgets.QPushButton('Options')
-        
+
+        self.simulateButton = QtWidgets.QPushButton('SELECT GENERATOR.CSV')
+        self.simulateButton.setStyleSheet('color: blue')
+
         self.layout = QtWidgets.QHBoxLayout(self)
         self.layout.addWidget(self.simulateButton)
-        self.layout.addWidget(self.optionsButton)
-    
-        # self.simulateButton.clicked.connect(self.simulate)
-        # self.optionsButton.clicked.connect(self.openOptionsDialog)
 
-    # @QtCore.Slot()
-    # def simulate(self):
-    #     pass
+        self.simulateButton.clicked.connect(self.selectFile)
 
-    # @QtCore.Slot()
-    # def openOptionsDialog(self):
-    #     pass
+    @QtCore.Slot()
+    def selectFile(self):
+        options = QtWidgets.QFileDialog.Options()
+        fileName, _ = QtWidgets.QFileDialog.getOpenFileName(
+            self, "Select your CSV file", "", "CSV Files (*.csv)", options=options)
+        if fileName:
+            print(fileName)

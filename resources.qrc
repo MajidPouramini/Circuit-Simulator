@@ -1,0 +1,16 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <!-- images -->
+    <file alias="bus.png">assets/images/bus.png</file>
+    <file alias="current_trans.png">assets/images/current_trans.png</file>
+    <file alias="earth.png">assets/images/earth.png</file>
+    <file alias="trans_2.png">assets/images/trans_2.png</file>
+    <file alias="trans_3.png">assets/images/trans_3.png</file>
+    <file alias="transmission_line.png">assets/images/transmission_line.png</file>
+    <file alias="voltage_supply.png">assets/images/voltage_supply.png</file>
+    <file alias="voltage_trans.png">assets/images/voltage_trans.png</file>
+
+    <!-- icons -->
+    <file alias="simulate.png">assets/icons/simulate.png</file>
+</qresource>
+</RCC>
