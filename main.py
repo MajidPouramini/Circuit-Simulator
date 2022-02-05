@@ -14,7 +14,10 @@ print('Pyside version: ', PySide6.__version__)
 print('Qt version: ', PySide6.QtCore.__version__)
 
 if __name__ == "__main__":
-    fileReader = FileReader('./samples/circuit_1.json')
+    if len(sys.argv) < 2:
+        print('Please specify a circuit file.')
+        sys.exit()
+    fileReader = FileReader(sys.argv[1])
     circuitGenerator = CircuitGenerator(fileReader.elements, fileReader.wires)
     circuit: Circuit = circuitGenerator.getCircuit();
 
