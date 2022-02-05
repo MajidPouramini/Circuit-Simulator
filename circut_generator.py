@@ -17,8 +17,8 @@ class CircuitGenerator():
         self.circuit = Circuit()
         for element in elements:
             self.circuit.addElement(element['id'], self.element_factory(element))
-        for wire in wires:
-            self.circuit.addWire(wire['id'], Wire(self.circuit.getElement(wire['from']['id']), self.circuit.getElement(wire['to']['id'])))
+        for idx, wire in enumerate(wires):
+            self.circuit.addWire(idx, Wire(self.circuit.getElement(wire['from']), self.circuit.getElement(wire['to'])))
             
     def getCircuit(self):
         return self.circuit

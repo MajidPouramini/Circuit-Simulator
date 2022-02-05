@@ -2,26 +2,31 @@
     "elements": [
         {
             "id": 1,
-            "name": "bus",
+            "name": "voltage_supply",
             "x": 80,
             "y": 50
         },
         {
             "id": 2,
             "name": "earth",
+            "x": 80,
+            "y": 250
+        },
+        {
+            "id": 3,
+            "name": "trans_2",
             "x": 200,
             "y": 50
         }
     ],
     "wires": [
         {
-            "id": 3,
-            "from": {
-                "id": 1
-            },
-            "to": {
-                "id": 2
-            }
+            "from": 2,
+            "to": 1
+        },
+        {
+            "from": 1,
+            "to": 3
         }
     ]
 }

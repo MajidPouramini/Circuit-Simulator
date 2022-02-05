@@ -27,6 +27,11 @@ class BoardWidget(QtWidgets.QWidget):
 
     def drawCircuit(self, painter: QtGui.QPainter):
         painter.setPen(QtCore.Qt.black)
+        for wireId in self.ciruit.wires:
+            wire =  self.ciruit.wires[wireId]
+            head = wire.head
+            tail = wire.tail
+            painter.drawLine(head.x, head.y, tail.x, tail.y)
         for elementId in self.ciruit.elements:
             element = self.ciruit.elements[elementId]
             x1, y1 = self.getElementCordinate(element)
@@ -34,12 +39,6 @@ class BoardWidget(QtWidgets.QWidget):
             painter.fillRect(x1 + 1, y1 + 1, 98, 58, QtCore.Qt.white)
             painter.drawText(
                 x1 + 2, y1 + 12, f'{elementId} - {type(element).__name__}')
-
-        for wireId in self.ciruit.wires:
-            wire =  self.ciruit.wires[wireId]
-            head = wire.head
-            tail = wire.tail
-            painter.drawLine(head.x, head.y, tail.x, tail.y)
 
     def getElementCordinate(self, element: Element):
         return element.x - 50, element.y - 30

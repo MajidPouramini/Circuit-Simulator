@@ -2,26 +2,111 @@
     "elements": [
         {
             "id": 1,
-            "name": "bus",
+            "name": "earth",
+            "x": 80,
+            "y": 120
+        },
+        {
+            "id": 2,
+            "name": "voltage_supply",
             "x": 80,
             "y": 50
         },
         {
-            "id": 2,
-            "name": "earth",
+            "id": 3,
+            "name": "trans_2",
             "x": 200,
             "y": 50
+        },
+        {
+            "id": 4,
+            "name": "current_trans",
+            "x": 320,
+            "y": 50
+        },
+        {
+            "id": 5,
+            "name": "bus",
+            "x": 440,
+            "y": 50
+        },
+        {
+            "id": 6,
+            "name": "voltage_trans",
+            "x": 320,
+            "y": 120
+        },
+        {
+            "id": 7,
+            "name": "earth",
+            "x": 320,
+            "y": 200
+        },
+        {
+            "id": 8,
+            "name": "transmission_line",
+            "x": 560,
+            "y": 50
+        },
+        {
+            "id": 9,
+            "name": "trans_3",
+            "x": 560,
+            "y": 150
+        },
+        {
+            "id": 10,
+            "name": "earth",
+            "x": 680,
+            "y": 150
+        },
+        {
+            "id": 11,
+            "name": "earth",
+            "x": 560,
+            "y": 250
         }
     ],
     "wires": [
         {
-            "id": 3,
-            "from": {
-                "id": 1
-            },
-            "to": {
-                "id": 2
-            }
+            "from": 1,
+            "to": 2
+        },
+        {
+            "from": 2,
+            "to": 3
+        },
+        {
+            "from": 3,
+            "to": 4
+        },
+        {
+            "from": 4,
+            "to": 5
+        },
+        {
+            "from": 6,
+            "to": 5
+        },
+        {
+            "from": 7,
+            "to": 6
+        },
+        {
+            "from": 5,
+            "to": 8
+        },
+        {
+            "from": 8,
+            "to": 9
+        },
+        {
+            "from": 9,
+            "to": 10
+        },
+        {
+            "from": 9,
+            "to": 11
         }
     ]
 }
